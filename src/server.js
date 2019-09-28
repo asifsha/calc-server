@@ -8,6 +8,8 @@ io.on("connection", client => {
   });
 });
 
+const allowedOrigins = "https://r-calc.herokuapp.com/";
+
 const port = process.env.PORT || 8000;
-io.listen(port);
+io.listen(port, {origins: allowedOrigins});
 console.log("listening on port ", port);
