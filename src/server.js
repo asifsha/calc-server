@@ -11,5 +11,7 @@ io.on("connection", client => {
 const allowedOrigins = "*:*";
 
 const port = process.env.PORT || 8000;
-io.listen(port, {origins: allowedOrigins});
+io.origins('*:*');
+//io(server,{origins:allowedOrigins}); 
+io.listen(port);
 console.log("listening on port ", port);
